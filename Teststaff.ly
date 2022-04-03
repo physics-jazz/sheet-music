@@ -13,7 +13,7 @@
         c1 | c | d
         <<
           {
-            c1 | d | e
+            c1 | d | e f g a b a b f 
           }
           \new Staff {
             
