@@ -1,45 +1,115 @@
 \language deutsch
 \header {
-  title = "Radosti rotující ratolesti"
-  composer = "Srnčí a kočičí"}
-
-\score {
-  \relative g' {
-    
-\numericTimeSignature
-\time 4/4
- \set Timing.beamExceptions = #'()
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
-  \set Timing.beatStructure = 1,1,1,1
-    \repeat volta 2
-    {r8 g8 \tuplet 3/2 { d' e a, } b es g e->~ 
+  title = "Radosti rotujÃ­cÃ­ ratolesti"
+  subtitle = "(2022)"
+  composer = "SrnÄÃ­ a koÄiÄÃ­"}
+\layout {
+  \context {
+    \Staff
+    \RemoveEmptyStaves
+  }
+}
+mainmotiv = \relative g' {
+  r8 g8 \tuplet 3/2 { d' e a, } b es g e->~ 
     \tuplet 3/2 {e d16 c h8} \tuplet 3/2 { g a fis'->~ }
     fis4~ \tuplet 3/2 {fis8 e fis}
+  }
+triolag = \relative g'' { \tuplet 3/2 { g4-- d-- g,-- } }
+bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
+\score {
+ <<
+ \new Staff \with { 
+    instrumentName = "FlÃ©tna"
+    shortInstrumentName = "Fl."
+    }
+        \relative c' { r1 r r r r r r r r r r2 r1 \tuplet 3/2 {r8 g'8 as8} }
+
+ \new Staff \with { 
+    instrumentName = "Klarinet"
+    shortInstrumentName = "Cl."
+    }
+        \relative c' { r1 r r r r r r r r r r }
+ \new Staff \with { 
+    instrumentName = "Saxofon"
+    shortInstrumentName = "Sx."
+    }
+        \relative c' { r1 r r r r r r r r r r }
+ 
+
+   \new Staff \with { 
+    instrumentName = "ZpÄ›v"
+    shortInstrumentName = "Zp."
+    }
+        \relative c' { r1 r r r r r r r r r r }
+  
+    
+ 
+  \new PianoStaff \with { instrumentName = "Piano" }
+  <<
+    \new Staff
+      \relative g' {
+        \numericTimeSignature
+        \time 4/4
+        \set Timing.beamExceptions = #'()
+        \set Timing.baseMoment = #(ly:make-moment 1/4)
+        \set Timing.beatStructure = 1,1,1,1
+    
+        \repeat volta 2 \mainmotiv
+        \alternative {
+          { \triolag \tuplet 3/2 { f4-- a-- b8 a } } 
+          { \triolag \tuplet 3/2 { f4-- a-- b8 c } }
+        }
+        \break
+  
+        \bridgem \bridgem
+        \transpose d c { \bridgem \bridgem }
+   
+        \tuplet 3/2 { <g h!>8 <g h>4 } \tuplet 3/2 { <g h>4 <f a>8 } 
+       \tuplet 3/2 { <g h>8 <g h>4 } \tuplet 3/2 { <g h>4 <f a>8 }
+       \tuplet 3/2 { <g h!>8 <g h>4 } \tuplet 3/2 { <g h>4 <f a>8 } 
+       \tuplet 3/2 { <h, e g >4 <h e g >4 <b es g>4 }  
+
+        \mainmotiv
+       \triolag \tuplet 3/2 { f'4-- a-- b8 a }
      }
     
-    \alternative {
-     {\tuplet 3/2 { g4-- d-- g,-- } \tuplet 3/2 { f-- a-- b8 a }} 
-     { \tuplet 3/2 { g'4-- d-- g,-- } \tuplet 3/2 { f-- a-- b8 c }}
+    \new Staff
+     
+    \relative g, { \clef bass   \numericTimeSignature \time 4/4
+     \set Timing.beamExceptions = #'()
+        \set Timing.baseMoment = #(ly:make-moment 1/4)
+        \set Timing.beatStructure = 1,1,1,1
+     
+      c4 < c e g a > des < des f as c >
+      d4 < d f a c > e4 < e g h d > 
+      f < f as c es > g < g b d f >
+      f < f as c es > g < g b d f >
+     
+      \tuplet 3/2 { as < as c es g >8 } ~ < as c es g >4 
+      \tuplet 3/2 { as < as c es g >8 } ~ < as c es g >4
+      \tuplet 3/2 { ges < ges b des f >8 } ~ < ges b des f >4 
+      \tuplet 3/2 { ges < ges b des f >8 } ~ < ges b des f >4 
+      \tuplet 3/2 { f < f a c e >8 } ~ < f a c e >4 
+      \tuplet 3/2 { f < f a c e >8 } ~ < f a c e >4
+      \tuplet 3/2 { d < d f a c >8 } ~ < d f a c >4 
+      g, g'
+
+      c,4 < c e g a > des < des f as c >
+      d4 < d f a c > e4 < e g h d > 
+      f < f as c es > g < g b d f >
     }
-\break
-    \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } 
-    \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 }
+    >>
+    \new Staff \with { 
+    instrumentName = "Kontrabas"
+    shortInstrumentName = "Cb."
+    }
+        \relative c' { r1 r r r r r r r r r r 
+        as4 c as c as c  
+        }
+  
+  >>
+  } 
     
-    \tuplet 3/2 { c8 c4 } \tuplet 3/2 { c4 b8 } 
-    \tuplet 3/2 { c8 c4 } \tuplet 3/2 { c4 b8 }
     
-    \tuplet 3/2 { <g h!>8 <g h>4 } \tuplet 3/2 { <g h>4 <f a>8 } 
-    \tuplet 3/2 { <g h>8 <g h>4 } \tuplet 3/2 { <g h>4 <f a>8 }
-     \tuplet 3/2 { <g h!>8 <g h>4 } \tuplet 3/2 { <g h>4 <f a>8 } 
-      <h, e g >4 <b es g>4  
-
-    r8 g'8 \tuplet 3/2 { d' e a, } b es g e->~ 
-    \tuplet 3/2 {e d16 c h8} \tuplet 3/2 { g a fis'->~ }
-    fis4~ \tuplet 3/2 {fis8 e fis}
-    \tuplet 3/2 { g4-- d-- g,-- } \tuplet 3/2 { f-- a-- b8 a }
-      
-  }
-
   \layout {}
   \midi {}
-}
