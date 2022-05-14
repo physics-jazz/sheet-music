@@ -2,7 +2,7 @@
 \header {
   title = "Radosti rotujÃ­cÃ­ ratolesti"
   subtitle = "(2022)"
-  composer = "SrnÄÃ­ a koÄiÄÃ­"}
+  composer = "Srnčí a kočičí"}
 \layout {
   \context {
     \Staff
