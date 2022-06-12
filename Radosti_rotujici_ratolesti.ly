@@ -30,12 +30,17 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
     instrumentName = "Klarinet"
     shortInstrumentName = "Cl."
     }
-        \relative c' { r1 r r r r r r r r r r }
+        \relative c' { r1 r r r r r r r r r r 
+        es4 as es as es as es as
+        }
  \new Staff \with { 
     instrumentName = "Saxofon"
     shortInstrumentName = "Sx."
+    }
         \relative c' { r1 r r r r r r r r r r
-         }
+        c4 es c es c es c es
+        }
+         
  
 
    \new Staff \with { 
@@ -108,7 +113,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
     shortInstrumentName = "Cb."
     }
         \relative c' { r1 r r r r r r r r r r 
-        as4 c as c as c  
+        as4 c as c as c as c
         }
   
   >>
