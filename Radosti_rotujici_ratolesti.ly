@@ -19,10 +19,12 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
 \score {
  <<
  \new Staff \with { 
-    instrumentName = "FlÃ©tna"
+    instrumentName = "Flétna"
     shortInstrumentName = "Fl."
     }
-        \relative c' { r1 r r r r r r r r r r2 r1 \tuplet 3/2 {r8 g'8 as8} }
+        \relative c' { r1 r r r r r r r r r r2 r4 \tuplet 3/2 {r8 g'8 as8}
+        \tuplet 3/2 {b4 c d} \tuplet 3/2 {es f g} \tuplet 3/2 {as b c} \tuplet 3/2 {d es f}
+         }
 
  \new Staff \with { 
     instrumentName = "Klarinet"
@@ -32,12 +34,12 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
  \new Staff \with { 
     instrumentName = "Saxofon"
     shortInstrumentName = "Sx."
-    }
-        \relative c' { r1 r r r r r r r r r r }
+        \relative c' { r1 r r r r r r r r r r
+         }
  
 
    \new Staff \with { 
-    instrumentName = "ZpÄ›v"
+    instrumentName = "Zpěv"
     shortInstrumentName = "Zp."
     }
         \relative c' { r1 r r r r r r r r r r }
@@ -71,6 +73,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
 
         \mainmotiv
        \triolag \tuplet 3/2 { f'4-- a-- b8 a }
+       r1 r1
      }
     
     \new Staff
@@ -97,6 +100,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
       c,4 < c e g a > des < des f as c >
       d4 < d f a c > e4 < e g h d > 
       f < f as c es > g < g b d f >
+      r1 r1
     }
     >>
     \new Staff \with { 
