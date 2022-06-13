@@ -1,6 +1,6 @@
 \language deutsch
 \header {
-  title = "Radosti rotujÃ­cÃ­ ratolesti"
+  title = "Radosti rotující ratolesti"
   subtitle = "(2022)"
   composer = "Srnčí a kočičí"}
 \layout {
