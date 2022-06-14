@@ -6,7 +6,7 @@
 \layout {
   \context {
     \Staff
-    \RemoveEmptyStaves
+    \RemoveAllEmptyStaves
   }
 }
 mainmotiv = \relative g' {
@@ -22,8 +22,20 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
     instrumentName = "Flétna"
     shortInstrumentName = "Fl."
     }
-        \relative c' { r1 r r r r r r r r r r2 r4 \tuplet 3/2 {r8 g'8 as8}
-        \tuplet 3/2 {b4 c d} \tuplet 3/2 {es f g} \tuplet 3/2 {as b c} \tuplet 3/2 {d es f}
+    
+        \relative c' { 
+        \set Score.markFormatter = #format-mark-box-alphabet
+        
+        r1 r r r r r r r r r r2 r4 \tuplet 3/2 {r8 g'8 as8}
+        \mark \default
+        \tuplet 3/2 {b4 c d} \tuplet 3/2 {es f g} 
+        \set Staff.ottavation = #"8va"
+        \ottava #1
+        \tuplet 3/2 {as b c} \tuplet 3/2 {d es f}
+         g1 
+        \ottava #0
+         
+         r1
          }
 
  \new Staff \with { 
@@ -32,6 +44,9 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
     }
         \relative c' { r1 r r r r r r r r r r 
         es4 as es as es as es as
+        
+        r1 r1
+        es4 as es as es as es as
         }
  \new Staff \with { 
     instrumentName = "Saxofon"
@@ -39,6 +54,9 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
     }
         \relative c' { r1 r r r r r r r r r r
         c4 es c es c es c es
+        r1 r1
+        c4 es c es c es c es
+        
         }
          
  
@@ -51,7 +69,9 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
   
     
  
-  \new PianoStaff \with { instrumentName = "Piano" }
+  \new PianoStaff \with { 
+  instrumentName = "Piano"
+  shortInstrumentName = "Pn." }
   <<
     \new Staff
       \relative g' {
@@ -60,7 +80,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
         \set Timing.beamExceptions = #'()
         \set Timing.baseMoment = #(ly:make-moment 1/4)
         \set Timing.beatStructure = 1,1,1,1
-    
+        \mark \default
         \repeat volta 2 \mainmotiv
         \alternative {
           { \triolag \tuplet 3/2 { f4-- a-- b8 a } } 
@@ -79,6 +99,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
         \mainmotiv
        \triolag \tuplet 3/2 { f'4-- a-- b8 a }
        r1 r1
+      <g h>4 <e g> <g h>4 <e g><g h>4 <e g><g h>4 <e g>
      }
     
     \new Staff
@@ -106,6 +127,8 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
       d4 < d f a c > e4 < e g h d > 
       f < f as c es > g < g b d f >
       r1 r1
+      \tuplet 3/2 {e,4 e' fis,} \tuplet 3/2 {fis'4 g, g'}
+      \tuplet 3/2 {a,4 a' h,}\tuplet 3/2 {h'4 cis, cis'}
     }
     >>
     \new Staff \with { 
@@ -114,6 +137,9 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
     }
         \relative c' { r1 r r r r r r r r r r 
         as4 c as c as c as c
+        r1 r1
+        as4 c as c as c as c
+        r1 r1
         }
   
   >>
