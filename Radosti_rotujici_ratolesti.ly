@@ -39,7 +39,10 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
          \tuplet 3/2 {b4 c d} \tuplet 3/2 {es f g} 
         \set Staff.ottavation = #"8va"
         \ottava #1
+        \ottava #0
         \tuplet 3/2 {as b c} \tuplet 3/2 {d es f}
+
+        r1 r r r 
          }
 
  \new Staff \with { 
@@ -51,6 +54,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
         
         r1 r1
         es4 as es as es as es as
+        r1 r r r
         }
  \new Staff \with { 
     instrumentName = "Saxofon"
@@ -60,6 +64,8 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
         c4 es c es c es c es
         r1 r1
         c4 es c es c es c es
+
+        r1 r r r 
         
         }
          
@@ -69,7 +75,14 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
     instrumentName = "Zpěv"
     shortInstrumentName = "Zp."
     }
-        \relative c' { r1 r r r r r r r r r r }
+        \relative c' { r1 r r r r r r r r
+         r r r r r r r r r r r r
+        \relative g' {
+  r8 g8 \tuplet 3/2 { g g g } as b f g->~ 
+    \tuplet 3/2 {g e16 f g8} \tuplet 3/2 { g e h'->~ }
+    h4~ \tuplet 3/2 {h8 a h}
+  }
+        }
   
     
  
@@ -79,6 +92,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
   <<
     \new Staff
       \relative g' {
+      \tempo 4 = 120
         \numericTimeSignature
         \time 4/4
         \set Timing.beamExceptions = #'()
@@ -90,7 +104,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
           { \triolag \tuplet 3/2 { f4-- a-- b8 a } } 
           { \triolag \tuplet 3/2 { f4-- a-- b8 c } }
         }
-        \break
+        
   
         \bridgem \bridgem
         \transpose d c { \bridgem \bridgem }
@@ -102,8 +116,10 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
 
         \mainmotiv
        \triolag \tuplet 3/2 { f'4-- a-- b8 a }
+       \bar "||"
        r1 r1
       <g h>4 <e g> <g h>4 <e g><g h>4 <e g><g h>4 <e g>
+       
       r1 r1
      
         \tuplet 3/2 {<h'' e g>4 <a d f> <g c e>} 
@@ -112,6 +128,10 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
         \tuplet 3/2 {<a d f>4 <g c e>2}
         \tuplet 3/2 {<f h d>4 <e a c> <d g h>} 
         \tuplet 3/2 {<c f a>4 <h e g>2}
+        \tuplet 3/2 {<h e g>4 <c f a> <a d f>}
+        \tuplet 3/2 {<h e g>  <b es g>2\fermata}
+         \bar "||"
+        
         
         
      }
@@ -147,7 +167,7 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
       \tuplet 3/2 {g,4 g g'} \tuplet 3/2 {g, g g'}
       \tuplet 3/2 {g, g g'} \tuplet 3/2 {g, g g'} 
       \tuplet 3/2 {g,4 g g'} \tuplet 3/2 {g, g g'}
-      \tuplet 3/2 {g, g g'} \tuplet 3/2 {g, g g'} 
+      \tuplet 3/2 {g, a f} \tuplet 3/2 {g g2}
     
     }
     >>
@@ -161,12 +181,13 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
         as4 c as c as c as c
         r1 r1
         as4 c as c as c as c
-        r1 r1
+        r1 r r r 
         }
   
   >>
+  
+  \midi {}  
+  \layout {}
   } 
     
-    
-  \layout {}
-  \midi {}
+  
