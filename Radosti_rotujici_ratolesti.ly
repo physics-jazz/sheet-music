@@ -35,7 +35,11 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
          g1 
         \ottava #0
          
-         r1
+          r2 r4 \tuplet 3/2 {r8 g,,8 as8}
+         \tuplet 3/2 {b4 c d} \tuplet 3/2 {es f g} 
+        \set Staff.ottavation = #"8va"
+        \ottava #1
+        \tuplet 3/2 {as b c} \tuplet 3/2 {d es f}
          }
 
  \new Staff \with { 
@@ -100,6 +104,16 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
        \triolag \tuplet 3/2 { f'4-- a-- b8 a }
        r1 r1
       <g h>4 <e g> <g h>4 <e g><g h>4 <e g><g h>4 <e g>
+      r1 r1
+     
+        \tuplet 3/2 {<h'' e g>4 <a d f> <g c e>} 
+        \tuplet 3/2 {<f h d>4 <e a c>2}
+        \tuplet 3/2 {<d g h>4 <c f a> <h e g>} 
+        \tuplet 3/2 {<a d f>4 <g c e>2}
+        \tuplet 3/2 {<f h d>4 <e a c> <d g h>} 
+        \tuplet 3/2 {<c f a>4 <h e g>2}
+        
+        
      }
     
     \new Staff
@@ -129,13 +143,21 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
       r1 r1
       \tuplet 3/2 {e,4 e' fis,} \tuplet 3/2 {fis'4 g, g'}
       \tuplet 3/2 {a,4 a' h,}\tuplet 3/2 {h'4 cis, cis'}
+      r1 r1
+      \tuplet 3/2 {g,4 g g'} \tuplet 3/2 {g, g g'}
+      \tuplet 3/2 {g, g g'} \tuplet 3/2 {g, g g'} 
+      \tuplet 3/2 {g,4 g g'} \tuplet 3/2 {g, g g'}
+      \tuplet 3/2 {g, g g'} \tuplet 3/2 {g, g g'} 
+    
     }
     >>
     \new Staff \with { 
     instrumentName = "Kontrabas"
     shortInstrumentName = "Cb."
     }
-        \relative c' { r1 r r r r r r r r r r 
+        \relative c' {
+        \clef bass
+         r1 r r r r r r r r r r 
         as4 c as c as c as c
         r1 r1
         as4 c as c as c as c
