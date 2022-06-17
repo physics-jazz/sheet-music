@@ -70,21 +70,48 @@ bridgem = \relative d'' { \tuplet 3/2 { d8 d4 } \tuplet 3/2 { d4 c8 } }
         }
          
  
-
+  <<
    \new Staff \with { 
     instrumentName = "Zpěv"
     shortInstrumentName = "Zp."
-    }
-        \relative c' { r1 r r r r r r r r
-         r r r r r r r r r r r r
-        \relative g' {
-  r8 g8 \tuplet 3/2 { g g g } as b f g->~ 
-    \tuplet 3/2 {g e16 f g8} \tuplet 3/2 { g e h'->~ }
-    h4~ \tuplet 3/2 {h8 a h}
-  }
+    } {
+      \new Voice = "prvnisloka" {
+         \relative c' { 
+            r1 r r r r r r r r r r r r r r r r r r r r
+          }
+           \relative g' {
+              r8 g8 \tuplet 3/2 { g g g } as b f g->~ 
+              \tuplet 3/2 {g e16 f g8} \tuplet 3/2 { g e h'->~ }
+              h4~ \tuplet 3/2 {h8 a h}
+              \tuplet 3/2 { c4-- b-- a-- } \tuplet 3/2 { g f c8 c }
+
+              r8 g'8 \tuplet 3/2 { g g g } as b f g->~ 
+              \tuplet 3/2 {g e16 f g8} \tuplet 3/2 { g e h'->~ }
+              h4~ \tuplet 3/2 {h8 c d }
+              \tuplet 3/2 { g4-- f-- c-- } \tuplet 3/2 { g b2\fermata  }
+
+              \partial 4 g16 a b c |           
+            }
         }
+      }
   
-    
+    \new Lyrics {
+      \lyricsto "prvnisloka" { 
+        Kluk na o -- kraj toč -- ny se -- dá
+        v_ne -- kli -- du tě -- še -- ní
+        chví -- li pou -- hou ne dlou -- hou
+        pro -- mě_..
+
+        Když na o -- kraj toč -- ny se -- dá
+        v_ne -- kli -- du tě -- še -- ní
+        chví -- li pou -- hou ne dlou -- hou
+        pro -- mě -- ní si v_sen 
+        s_mi -- li -- o -- ny o -- ken
+
+      }
+    }
+  >>
+  
  
   \new PianoStaff \with { 
   instrumentName = "Piano"
